@@ -9,4 +9,17 @@ spring:
     show-sql: true
     generate-ddl: true
 
+github :
+  api-url : https://api.github.com
+  token : ${GITHUB_API_TOKEN}
+
+
+
+
+
+
+
+
+
+
 
