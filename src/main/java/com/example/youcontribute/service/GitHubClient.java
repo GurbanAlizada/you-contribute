@@ -2,17 +2,15 @@ package com.example.youcontribute.service;
 
 
 import com.example.youcontribute.config.GitHubProperties;
-import com.example.youcontribute.service.response.GithubIssueResponse;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.youcontribute.dto.resources.GithubIssueResponse;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.time.LocalDate;
 
 @Service
 public class GitHubClient {
@@ -26,12 +24,13 @@ public class GitHubClient {
         this.gitHubProperties = gitHubProperties;
     }
 
-    public GithubIssueResponse[] listIssues(String owner , String repository){
+    public GithubIssueResponse[] listIssues(String owner , String repository , LocalDate since){
 
-        String issuesUrl = String.format("%s/repos/%s/%s/issues" ,
+        String issuesUrl = String.format("%s/repos/%s/%s/issues?since=%s" ,
                 gitHubProperties.getApiUrl() ,
                 owner ,
-                repository);
+                repository,
+                since.toString());
 
 
         HttpHeaders headers = new HttpHeaders();

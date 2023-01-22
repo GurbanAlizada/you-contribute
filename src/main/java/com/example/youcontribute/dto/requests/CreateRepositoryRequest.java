@@ -1,4 +1,4 @@
-package com.example.youcontribute.controller.requests;
+package com.example.youcontribute.dto.requests;
 
 
 import lombok.*;

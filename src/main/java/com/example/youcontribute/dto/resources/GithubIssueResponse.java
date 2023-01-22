@@ -1,4 +1,4 @@
-package com.example.youcontribute.service.response;
+package com.example.youcontribute.dto.resources;
 
 
 import java.util.Date;

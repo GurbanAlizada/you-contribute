@@ -7,16 +7,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
+
 @SpringBootApplication
-@EnableAsync
+@EnableScheduling
 public class YouContributeApplication implements CommandLineRunner {
 
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
 
 
     @Autowired
@@ -28,6 +27,9 @@ public class YouContributeApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(client.listIssues("octocat", "Hello-World")[1]);
+      //  System.out.println(client.listIssues("octocat", "Hello-World" , LocalDate.of(2013,01,01))[1]);
     }
+
+
+
 }

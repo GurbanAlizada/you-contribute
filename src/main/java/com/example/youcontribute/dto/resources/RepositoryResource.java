@@ -1,10 +1,8 @@
-package com.example.youcontribute.controller.resources;
+package com.example.youcontribute.dto.resources;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Builder
