@@ -9,9 +9,43 @@ import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Data;
 
+
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @Data
 public class GithubIssueResponse {
+
+    @Override
+    public String toString() {
+        return "GithubIssueResponse{" +
+                "url='" + url + '\'' +
+                ", repositoryUrl='" + repositoryUrl + '\'' +
+                ", labelsUrl='" + labelsUrl + '\'' +
+                ", commentsUrl='" + commentsUrl + '\'' +
+                ", eventsUrl='" + eventsUrl + '\'' +
+                ", htmlUrl='" + htmlUrl + '\'' +
+                ", id=" + id +
+                ", nodeId='" + nodeId + '\'' +
+                ", number=" + number +
+                ", title='" + title + '\'' +
+                ", user=" + user +
+                ", labels=" + labels +
+                ", state='" + state + '\'' +
+                ", locked=" + locked +
+                ", assignee=" + assignee +
+                ", assignees=" + assignees +
+                ", milestone=" + milestone +
+                ", comments=" + comments +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", closedAt=" + closedAt +
+                ", authorAssociation='" + authorAssociation + '\'' +
+                ", activeLockReason=" + activeLockReason +
+                ", body='" + body + '\'' +
+                ", performedViaGithubApp=" + performedViaGithubApp +
+                ", pullRequest=" + pullRequest +
+                '}';
+    }
+
     public String url;
     public String repositoryUrl;
     public String labelsUrl;
